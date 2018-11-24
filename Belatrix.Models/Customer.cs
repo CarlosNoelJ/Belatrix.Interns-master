@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Belatrix.WebApi.Models
+namespace Belatrix.Models
 {
     public partial class Customer
     {

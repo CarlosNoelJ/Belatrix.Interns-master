@@ -7,9 +7,9 @@ namespace Belatrix.Repository.SqlServer
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly DbContext _dbContext;
+        protected readonly ChinookContext _dbContext;
 
-        public Repository(DbContext dbContext)
+        public Repository(ChinookContext dbContext)
         {
             _dbContext = dbContext;
         }

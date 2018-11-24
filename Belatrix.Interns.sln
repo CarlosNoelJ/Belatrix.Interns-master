@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Belatrix.Repository", "Bela
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Belatrix.Repository.SqlServer", "Belatrix.Repository.SqlServer\Belatrix.Repository.SqlServer.csproj", "{3E98C0CF-9F8E-4BFA-8B4D-51A76C37AA6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Belatrix.WebApi", "Belatrix.WebApi\Belatrix.WebApi.csproj", "{46A09D04-5FF7-4B9C-8EA0-6BCA603406C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Belatrix.WebApi", "Belatrix.WebApi\Belatrix.WebApi.csproj", "{46A09D04-5FF7-4B9C-8EA0-6BCA603406C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Belatrix.Models", "Belatrix.Models\Belatrix.Models.csproj", "{6EE2A28C-19CA-40A8-A997-BD1C353F1EB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{46A09D04-5FF7-4B9C-8EA0-6BCA603406C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46A09D04-5FF7-4B9C-8EA0-6BCA603406C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46A09D04-5FF7-4B9C-8EA0-6BCA603406C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EE2A28C-19CA-40A8-A997-BD1C353F1EB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE2A28C-19CA-40A8-A997-BD1C353F1EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE2A28C-19CA-40A8-A997-BD1C353F1EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE2A28C-19CA-40A8-A997-BD1C353F1EB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

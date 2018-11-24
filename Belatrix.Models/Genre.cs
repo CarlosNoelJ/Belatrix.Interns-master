@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Belatrix.WebApi.Models
+namespace Belatrix.Models
 {
-    public partial class MediaType
+    public partial class Genre
     {
-        public MediaType()
+        public Genre()
         {
             Track = new HashSet<Track>();
         }
 
-        public int MediaTypeId { get; set; }
+        public int GenreId { get; set; }
         public string Name { get; set; }
 
         public ICollection<Track> Track { get; set; }

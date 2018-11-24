@@ -1,8 +1,9 @@
 ﻿using System;
+using Belatrix.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Belatrix.WebApi.Models
+namespace Belatrix.Repository.SqlServer
 {
     public partial class ChinookContext : DbContext
     {
@@ -26,15 +27,6 @@ namespace Belatrix.WebApi.Models
         public virtual DbSet<Playlist> Playlist { get; set; }
         public virtual DbSet<PlaylistTrack> PlaylistTrack { get; set; }
         public virtual DbSet<Track> Track { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=ICE-BLCK;Initial Catalog=Chinook;Integrated Security=True;");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
