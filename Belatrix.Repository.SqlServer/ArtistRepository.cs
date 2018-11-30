@@ -9,9 +9,9 @@ namespace Belatrix.Repository.SqlServer
         {
         }
 
-        public Artist GetById(int id)
-        {
-            return _dbContext.Artist.FirstOrDefault(x => x.ArtistId == id);
-        }
+        //public Artist GetById(int id)
+        //{
+        //    return _dbContext.Artist.FirstOrDefault(x => x.ArtistId == id);
+        //}
     }
 }

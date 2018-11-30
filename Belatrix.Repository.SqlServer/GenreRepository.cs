@@ -9,9 +9,9 @@ namespace Belatrix.Repository.SqlServer
         {
         }
 
-        public Genre GetById(int id)
-        {
-            return _dbContext.Genre.FirstOrDefault(x => x.GenreId == id);
-        }
+        //public Genre GetById(int id)
+        //{
+        //    return _dbContext.Genre.FirstOrDefault(x => x.GenreId == id);
+        //}
     }
 }

@@ -28,7 +28,7 @@ namespace Belatrix.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddTransient(option => new ChinookContext(new DbContextOptionsBuilder<ChinookContext>().UseSqlServer(Configuration.GetConnectionString("Chinook")).Options));
+            services.AddTransient(option => new ChinookContext(new DbContextOptionsBuilder<ChinookContext>().UseMySQL(Configuration.GetConnectionString("Chinook")).Options));
 
             services.AddTransient<IUnitOfWork,UnitOfWork>();
         }

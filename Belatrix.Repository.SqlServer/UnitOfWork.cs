@@ -1,14 +1,23 @@
-﻿namespace Belatrix.Repository.SqlServer
+﻿using Belatrix.Models;
+
+namespace Belatrix.Repository.SqlServer
 {
     public class UnitOfWork : IUnitOfWork
     {
         public UnitOfWork(ChinookContext dbContext)
         {
-            Genres = new GenreRepository(dbContext);
-            Artists = new ArtistRepository(dbContext);
+            //Genres = new GenreRepository(dbContext);
+            Artists = new Repository<Artist>(dbContext);
+            Playlist = new Repository<Playlist>(dbContext);
+            Genres = new Repository<Genre>(dbContext);
         }
-        public IGenreRepository Genres { get; }
+        
+        public IRepository<Playlist> Playlist { get; }
 
-        public IArtistRepository Artists { get; }
+        public IRepository<Artist> Artists { get; }
+
+        public IRepository<Genre> Genres { get; }
+
+        //public IGenreRepository Genre {get;}
     }
 }

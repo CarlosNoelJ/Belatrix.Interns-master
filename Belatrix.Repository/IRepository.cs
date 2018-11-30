@@ -11,5 +11,6 @@ namespace Belatrix.Repository
         IEnumerable<T> GetList();
         bool Update(T entity);
         bool Delete(T entity);
+        T GetById(int id);
     }
 }

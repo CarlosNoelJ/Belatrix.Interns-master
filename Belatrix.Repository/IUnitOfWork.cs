@@ -1,11 +1,17 @@
-﻿namespace Belatrix.Repository
+﻿using Belatrix.Models;
+
+namespace Belatrix.Repository
 {
     public interface IUnitOfWork
     {
-//        GenreRepository = new GenreRepository()
+        //IGenreRepository Genres { get; }
 
-        IGenreRepository Genres { get; }
+        //IArtistRepository Artists { get; }
 
-        IArtistRepository Artists { get; }
+        IRepository<Playlist> Playlist { get; }
+
+        IRepository<Artist> Artists { get; }
+
+        IRepository<Genre> Genres { get; }
     }
 }
