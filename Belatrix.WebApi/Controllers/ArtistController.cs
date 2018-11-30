@@ -42,8 +42,8 @@ namespace Belatrix.WebApi.Controllers
         [HttpPut]
         public bool Update(Artist artist)
         {
-            Artist art = _unit.Artists.GetById(artist.ArtistId);
-            return _unit.Artists.Update(art);
+            //Artist art = _unit.Artists.GetById(artist.ArtistId);
+            return _unit.Artists.Update(artist);
         }
 
         [HttpDelete]
