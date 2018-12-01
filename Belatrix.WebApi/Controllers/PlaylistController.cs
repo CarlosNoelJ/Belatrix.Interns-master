@@ -35,13 +35,13 @@ namespace Belatrix.WebApi.Controllers
         }
 
         [HttpPut]
-        public bool Update(Playlist playlist)
+        public int Update(Playlist playlist)
         {
             return _unit.Playlist.Update(playlist);
         }
 
         [HttpDelete]
-        public bool Delete(Playlist playlist)
+        public int Delete(Playlist playlist)
         {
             return _unit.Playlist.Delete(playlist);
         }

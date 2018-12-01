@@ -3,7 +3,7 @@ using Belatrix.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Belatrix.Repository
+namespace Belatrix.Repository.SqlServer
 {
     public partial class ChinookContext : DbContext
     {

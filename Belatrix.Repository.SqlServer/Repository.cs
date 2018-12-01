@@ -17,10 +17,10 @@ namespace Belatrix.Repository.SqlServer
             return _dbContext.SaveChanges();
         }
 
-        public bool Delete(T entity)
+        public int Delete(T entity)
         {
             _dbContext.Remove(entity);
-            return _dbContext.SaveChanges()>0;
+            return _dbContext.SaveChanges();
         }
 
         public T GetById(int id)
@@ -33,10 +33,10 @@ namespace Belatrix.Repository.SqlServer
             return _dbContext.Set<T>();
         }
 
-        public bool Update(T entity)
+        public int Update(T entity)
         {
             _dbContext.Update(entity);
-            return _dbContext.SaveChanges() > 0;
+            return _dbContext.SaveChanges();
         }
     }
 }

@@ -35,13 +35,13 @@ namespace Belatrix.WebApi.Controllers
         }
 
         [HttpPut]
-        public bool Update(Genre genre)
+        public int Update(Genre genre)
         {
             return _unit.Genres.Update(genre);
         }
 
         [HttpDelete]
-        public bool Delete(Genre genre)
+        public int Delete(Genre genre)
         {
             return _unit.Genres.Delete(genre);
         }

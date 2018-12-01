@@ -29,22 +29,24 @@ namespace Belatrix.WebApi.Controllers
         }
 
         [HttpPost]
-        public int Add(Artist artists)
+        public IActionResult Add(Artist artists)
         {
-            return _unit.Artists.Add(artists);
+            if (artists == null) return BadRequest();
+
+            return Ok(_unit.Artists.Add(artists));
         }
 
         [HttpPut]
-        public bool Update(Artist artist)
+        public IActionResult Update(Artist artist)
         {
             //Artist art = _unit.Artists.GetById(artist.ArtistId);
-            return _unit.Artists.Update(artist);
+            return Ok(_unit.Artists.Update(artist));
         }
 
         [HttpDelete]
-        public bool Delete(Artist artist)
+        public IActionResult Delete(Artist artist)
         {
-            return _unit.Artists.Delete(artist);
+            return Ok(_unit.Artists.Delete(artist));
         }
     }
 }

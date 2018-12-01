@@ -9,8 +9,8 @@ namespace Belatrix.Repository
         int Add(T entity);
         // Lista más liviana.
         IEnumerable<T> GetList();
-        bool Update(T entity);
-        bool Delete(T entity);
+        int Update(T entity);
+        int Delete(T entity);
         T GetById(int id);
     }
 }
