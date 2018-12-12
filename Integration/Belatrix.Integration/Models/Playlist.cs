@@ -1,8 +1,8 @@
 ﻿namespace Belatrix.Integration.Models
 {
-    public class Genre
+    public class Playlist
     {
-        public int genreId { get; set; }
+        public int playlistId { get; set; }
         public string name { get; set; }
     }
 }

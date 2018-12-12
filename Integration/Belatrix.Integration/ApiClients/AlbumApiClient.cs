@@ -4,60 +4,60 @@ using System.Collections.Generic;
 
 namespace Belatrix.Integration.ApiClients
 {
-    class ArtistsApiClient: ChinookApiClient
+    class AlbumApiClient : ChinookApiClient
     {
-        internal IRestResponse<List<Artists>> GetArtistsList()
+        internal IRestResponse<List<Album>> GetAlbumList()
         {
-            var url = "/api/artists";
+            var url = "/api/Album";
             var apiRequest = new RestRequest(url, Method.GET);
-
-            return Execute<List<Artists>>(apiRequest);
+            return Execute<List<Album>>(apiRequest);
         }
 
-        internal IRestResponse<Artists> GetAtistById()
+        internal IRestResponse<Album> GetAlbumById()
         {
-            var url = "/api/artists/1";
-            var apiRequest = new RestRequest(url,Method.GET);
-
-            return Execute<Artists>(apiRequest);
+            var url = "/api/Album/1";
+            var apiRequest = new RestRequest(url, Method.GET);
+            //albumId
+            //title
+            //artistId
+            return Execute<Album>(apiRequest);
         }
 
-        internal IRestResponse<int> PostArtist()
+        internal IRestResponse<int> PostAlbum()
         {
-            var url = "/api/artists/";
+            var url = "/api/Album/";
 
             // Cuando se anida, no se le da propiedades
             var apiRequest = new RestRequest(url, Method.POST);
 
             apiRequest.RequestFormat = DataFormat.Json;
-            apiRequest.AddBody(new { artistid = 276, name ="Tongo"});
-            
-            
+            apiRequest.AddBody(new { title = "Huaralino", artistId =1 });
+
             return Execute<int>(apiRequest);
         }
 
-        internal IRestResponse<int> PutArtist()
+        internal IRestResponse<int> PutAlbum()
         {
-            var url = "/api/artists/";
+            var url = "/api/Album/";
 
             // Cuando se anida, no se le da propiedades
             var apiRequest = new RestRequest(url, Method.PUT);
 
             apiRequest.RequestFormat = DataFormat.Json;
-            apiRequest.AddBody(new { artistid = 276, name = "Sin Bandera" });
+            apiRequest.AddBody(new { albumId =348, title = "Huaralino", artistId = 2 });
 
 
             return Execute<int>(apiRequest);
         }
-        internal IRestResponse<int> DeleteArtist()
+        internal IRestResponse<int> DeleteAlbum()
         {
-            var url = "/api/artists/";
+            var url = "/api/Album/";
 
             // Cuando se anida, no se le da propiedades
             var apiRequest = new RestRequest(url, Method.DELETE);
 
             apiRequest.RequestFormat = DataFormat.Json;
-            apiRequest.AddBody(new { artistid = 276});
+            apiRequest.AddBody(new { albumId = 348 });
 
 
             return Execute<int>(apiRequest);

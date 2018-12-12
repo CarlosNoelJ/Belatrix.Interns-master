@@ -1,61 +1,56 @@
-using Belatrix.Integration.ApiClients;
+﻿using Belatrix.Integration.ApiClients;
 using Belatrix.Integration.Models;
 using FluentAssertions;
 using NUnit.Framework;
 
 namespace Belatrix.Integration
 {
-    public class ArtistsApiTests
+    public class AlbumApiTest
     {
-        private ArtistsApiClient _client;
+        private AlbumApiClient _client;
 
         [SetUp]
         public void Setup()
         {
-            _client = new ArtistsApiClient();
+            _client = new AlbumApiClient();
         }
 
         [Test]
-        [Order(1)]
         public void GetList_OkResponse()
         {
-            var result = _client.GetArtistsList();
+            var result = _client.GetAlbumList();
 
-            result.Data.Should().AllBeOfType(typeof(Artists)).And.HaveCountGreaterThan(1);
+            result.Data.Should().AllBeOfType(typeof(Album)).And.HaveCountGreaterThan(1);
         }
 
         [Test]
-        [Order(2)]
         public void GetListId_OkResponse()
         {
-            var result = _client.GetAtistById();
+            var result = _client.GetAlbumById();
 
-            result.Data.Should().BeOfType(typeof(Artists));
+            result.Data.Should().BeOfType(typeof(Album));
         }
 
         [Test]
-        [Order(3)]
         public void Post_OkResponse()
         {
-            var result = _client.PostArtist();
+            var result = _client.PostAlbum();
 
             result.Data.Should().Be(1);
         }
 
         [Test]
-        [Order(4)]
         public void Put_OkResponse()
         {
-            var result = _client.PutArtist();
+            var result = _client.PutAlbum();
 
             result.Data.Should().Be(1);
         }
 
         [Test]
-        [Order(5)]
         public void Delete_OkResponse()
         {
-            var result = _client.DeleteArtist();
+            var result = _client.DeleteAlbum();
 
             result.Data.Should().Be(1);
         }

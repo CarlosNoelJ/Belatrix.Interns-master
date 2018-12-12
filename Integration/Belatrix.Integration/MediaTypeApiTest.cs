@@ -1,43 +1,44 @@
-using Belatrix.Integration.ApiClients;
+﻿using Belatrix.Integration.ApiClients;
 using Belatrix.Integration.Models;
 using FluentAssertions;
 using NUnit.Framework;
 
 namespace Belatrix.Integration
 {
-    public class ArtistsApiTests
+    public class MediaTypeApiTest
     {
-        private ArtistsApiClient _client;
+        private MediaTypeApiClient _client;
 
         [SetUp]
         public void Setup()
         {
-            _client = new ArtistsApiClient();
+            _client = new MediaTypeApiClient();
         }
 
         [Test]
         [Order(1)]
         public void GetList_OkResponse()
         {
-            var result = _client.GetArtistsList();
+            var result = _client.GetMediaTypeList();
 
-            result.Data.Should().AllBeOfType(typeof(Artists)).And.HaveCountGreaterThan(1);
+            result.Data.Should().AllBeOfType(typeof(MediaType)).And.HaveCountGreaterThan(1);
         }
 
         [Test]
         [Order(2)]
         public void GetListId_OkResponse()
         {
-            var result = _client.GetAtistById();
+            var result = _client.GetMediaTypeById();
 
-            result.Data.Should().BeOfType(typeof(Artists));
+            result.Data.Should().BeOfType(typeof(MediaType));
         }
 
         [Test]
         [Order(3)]
         public void Post_OkResponse()
         {
-            var result = _client.PostArtist();
+            var result = _client.PostMediaType();
+
 
             result.Data.Should().Be(1);
         }
@@ -46,7 +47,7 @@ namespace Belatrix.Integration
         [Order(4)]
         public void Put_OkResponse()
         {
-            var result = _client.PutArtist();
+            var result = _client.PutMediaType();
 
             result.Data.Should().Be(1);
         }
@@ -55,7 +56,7 @@ namespace Belatrix.Integration
         [Order(5)]
         public void Delete_OkResponse()
         {
-            var result = _client.DeleteArtist();
+            var result = _client.DeleteMediaType();
 
             result.Data.Should().Be(1);
         }

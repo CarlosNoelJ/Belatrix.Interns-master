@@ -4,60 +4,58 @@ using System.Collections.Generic;
 
 namespace Belatrix.Integration.ApiClients
 {
-    class ArtistsApiClient: ChinookApiClient
+    class MediaTypeApiClient : ChinookApiClient
     {
-        internal IRestResponse<List<Artists>> GetArtistsList()
+        internal IRestResponse<List<MediaType>> GetMediaTypeList()
         {
-            var url = "/api/artists";
+            var url = "/api/MediaType";
+            var apiRequest = new RestRequest(url, Method.GET);
+            return Execute<List<MediaType>>(apiRequest);
+        }
+
+        internal IRestResponse<MediaType> GetMediaTypeById()
+        {
+            var url = "/api/MediaType/1";
             var apiRequest = new RestRequest(url, Method.GET);
 
-            return Execute<List<Artists>>(apiRequest);
+            return Execute<MediaType>(apiRequest);
         }
 
-        internal IRestResponse<Artists> GetAtistById()
+        internal IRestResponse<int> PostMediaType()
         {
-            var url = "/api/artists/1";
-            var apiRequest = new RestRequest(url,Method.GET);
-
-            return Execute<Artists>(apiRequest);
-        }
-
-        internal IRestResponse<int> PostArtist()
-        {
-            var url = "/api/artists/";
+            var url = "/api/MediaType/";
 
             // Cuando se anida, no se le da propiedades
             var apiRequest = new RestRequest(url, Method.POST);
 
             apiRequest.RequestFormat = DataFormat.Json;
-            apiRequest.AddBody(new { artistid = 276, name ="Tongo"});
-            
+            apiRequest.AddBody(new { name = "Huaralino" });
             
             return Execute<int>(apiRequest);
         }
 
-        internal IRestResponse<int> PutArtist()
+        internal IRestResponse<int> PutMediaType()
         {
-            var url = "/api/artists/";
+            var url = "/api/MediaType/";
 
             // Cuando se anida, no se le da propiedades
             var apiRequest = new RestRequest(url, Method.PUT);
 
             apiRequest.RequestFormat = DataFormat.Json;
-            apiRequest.AddBody(new { artistid = 276, name = "Sin Bandera" });
+            apiRequest.AddBody(new { MediaTypeId = 6, name = "negroide" });
 
 
             return Execute<int>(apiRequest);
         }
-        internal IRestResponse<int> DeleteArtist()
+        internal IRestResponse<int> DeleteMediaType()
         {
-            var url = "/api/artists/";
+            var url = "/api/MediaType/";
 
             // Cuando se anida, no se le da propiedades
             var apiRequest = new RestRequest(url, Method.DELETE);
 
             apiRequest.RequestFormat = DataFormat.Json;
-            apiRequest.AddBody(new { artistid = 276});
+            apiRequest.AddBody(new { MediaTypeId = 6 });
 
 
             return Execute<int>(apiRequest);
